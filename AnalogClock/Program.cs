@@ -12,7 +12,7 @@ namespace AnalogClock
         public DateTime CurrentTime { get; set; } = DateTime.Now;
         public MyCircleForm()
         {
-            this.Text = $"          {CurrentTime:HH:mm:ss}";
+       
             this.DoubleBuffered = true; // Prevents flickering
             this.TopMost = true;
             this.Size = new Size(800, 800);
@@ -51,8 +51,6 @@ namespace AnalogClock
             Graphics g = e.Graphics;
             g.SmoothingMode = SmoothingMode.AntiAlias;
             g.TextRenderingHint = TextRenderingHint.AntiAlias;
-
-            this.Text = $"          {CurrentTime:HH:mm:ss}";
 
             Pen clockPen = new Pen(Color.Black, 7);
             Pen hourPen = new Pen(Color.Black, 5);
@@ -94,13 +92,13 @@ namespace AnalogClock
 
                 if (i % 15 == 0)
                 {
-                    markPen = new Pen(Color.Black, 6);
-                    markSize = 30;
+                    markPen = new Pen(Color.Black, 4);
+                    markSize = 20;
                 }
                 else if (i % 5 == 0)
                 {
                     markPen = new Pen(Color.Black, 3);
-                    markSize = 20;
+                    markSize = 15;
                 }
                 else
                 {
